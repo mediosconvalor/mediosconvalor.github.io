@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://mediosconvalor.com/wp-content/uploads/2019/03/cropped-favicon-32x32-1-32x32.png" sizes="32x32" />
+    <link rel="icon" href="https://mediosconvalor.com/wp-content/uploads/2019/03/cropped-favicon-32x32-1-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="https://mediosconvalor.com/wp-content/uploads/2019/03/cropped-favicon-32x32-1-180x180.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medios Con Valor - Monterrey</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://www.iwf.org/wp-content/uploads/2023/02/high-angle-view-of-a-lake-and-forest-environment-conservation.jpg') no-repeat center center/cover;
+            backdrop-filter: blur(8px);
+            color: white;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .menu-container {
+            max-width: 450px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        .menu-item {
+            background: #00dd2a;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+            font-size: 18px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+        .menu-item:hover {
+            background: #009eff;
+        }
+        .submenu {
+            display: none;
+            padding: 10px;
+        }
+        .submenu a {
+            display: block;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            margin: 5px 0;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .submenu a:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        footer {
+            background-color: rgba(83, 91, 111, 0.8);
+            padding: 20px;
+            font-style: italic;
+            border-radius: 10px;
+        }
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function toggleSubmenu(id) {
+            var submenu = document.getElementById(id);
+            submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="https://cdn.bio.link/uploads/profile_pictures/2024-03-26/IG7D3fOd5oQNl3bKr6nJp0qUJaGwahhh.png" alt="Medios Con Valor" style="max-width: 200px; margin: 20px auto; display: block;">
+        <h1>MEDIOS CON VALOR</h1>
+    </header>
+    <div class="menu-container">
+        <div class="menu-item" onclick="toggleSubmenu('registroDiario')">Registro Diario</div>
+        <div class="submenu" id="registroDiario">
+            <a href="https://script.google.com/a/macros/mediosconvalor.com/s/AKfycbxJx_ivOElihhRcg6aZFqbPo_4w_fbLOWi0u07PxuZ5K9clP9ONSNvzYc0r38wflHgX/exec" target="_blank">BD Relleno</a>
+            <a href="https://docs.google.com/spreadsheets/d/1G5xphKRa08_dXlH3GTA59o6XNKekqLI60zGfqxsNiuE/edit?gid=2004881432#gid=2004881432" target="_blank">Op Diaria</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdKPX-3x6HGWir-AirMCuIWCkEElUU_0lbV1RnNnRps__yK0A/viewform" target="_blank">Tickets / Boletas</a>
+            <a href="https://docs.google.com/spreadsheets/d/16Vwh4tcAFaLM5DD4ze43T9KLOHCWEWB_Nes23qpvMFk/edit?gid=0#gid=0" target="_blank">Registro de Incidencias</a>
+        </div>
+        <div class="menu-item" onclick="toggleSubmenu('facturacion')">Facturación</div>
+        <div class="submenu" id="facturacion">
+            <a href="https://docs.google.com/spreadsheets/d/1onG_gbSF38k0_Wamo5EXpheE_XsJ4hE0dFCmlAvYt54/edit?gid=910357026#gid=910357026" target="_blank">Catálogo de Clientes</a>
+            <a href="https://drive.google.com/drive/folders/1fmqo5aETw3L84LtJBXppo9sqo-e8514q?usp=drive_link" target="_blank">Reportes PJENL</a>
+            <a href="https://script.google.com/a/macros/mediosconvalor.com/s/AKfycbx04wiQWVb4EMvg_E0-F_XFNb1TuidffzpvxuWy38bPkr7-HtYfZJo6WJh3JrYZULix/exec" target="_blank">Bimestre Anterior - BD Relleno</a>
+        </div>
+        <div class="menu-item" onclick="toggleSubmenu('manifiestos')">Manifiestos</div>
+        <div class="submenu" id="manifiestos">
+            <a href="https://docs.google.com/spreadsheets/d/1H21PEcMnLe3kA6rNlW6RQbjbf2wkaxyH0KHlJUWjpiU/edit?gid=685684185#gid=685684185" target="_blank">Crear Manifiestos</a>
+            <a href="https://docs.google.com/spreadsheets/d/1NPHD4_RsKg_HPhy8vLmMr1Z1Vr0i8eBfW4aJsFLHLTI/edit?gid=780095717#gid=780095717" target="_blank">Organizar Manifiestos</a>
+        </div>
+        <div class="menu-item" onclick="toggleSubmenu('operacion')">Operación</div>
+        <div class="submenu" id="operacion">
+            <a href="https://docs.google.com/spreadsheets/d/1pRhAT5nODxtPe2m60IRcp4yUEZJ55vtrX1o-wSi-s8Y/edit?gid=0#gid=0" target="_blank">Reporte Ambiental</a>
+            <a href="https://docs.google.com/spreadsheets/d/1AJdirD1WMa3ST1l4ohgdxuP5tHBBO3im_ja8R4Tpv7Y/edit?gid=0#gid=0" target="_blank">Ubicaciones de Cliente</a>
+            <a href="https://www.appsheet.com/start/baf77fc5-98fd-49d0-aed2-3175b47afc68" target="_blank">Aplicación</a>
+        </div>
+    </div>
+    <footer>
+        <p>MEDIOS CON VALOR <a href="https://levm.site">by Eduardo Vázquez</a></p>
+    </footer>
+</body>
+</html>
