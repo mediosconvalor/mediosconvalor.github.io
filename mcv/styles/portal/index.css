@@ -4,7 +4,7 @@
    Fondo fijo que cubre todo el scroll
    ————————————————————————————— */
 html {
-  background: url('https://raw.githubusercontent.com/mediosconvalor/mcv/refs/heads/main/img/background/welcome_portal.png')
+  background: url('https://mediosconvalor.github.io/mcv/img/background/welcome_portal.png')
               center/cover no-repeat fixed;
 }
 body {
