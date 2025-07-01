@@ -1,0 +1,182 @@
+html, body {
+  margin: 0; padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background: url('https://raw.githubusercontent.com/mediosconvalor/mcv/refs/heads/main/img/background/truck_login.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.header-text {
+  font-weight: bold;
+  user-select: none;
+  text-align: center;
+  margin-bottom: 2rem;
+  line-height: 1;
+}
+
+.header-text .zona {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.header-text .mcviana {
+  font-size: 5rem;
+  color: #00c71f;
+  margin: 0;
+  font-weight: 900;
+}
+
+.header-text .portal {
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+.container-2fa {
+  background: rgba(255 255 255 / 0.95);
+  padding: 2rem 2.5rem;
+  border-radius: 25px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  color: black;
+  width: 360px;
+  max-width: 90vw;
+  text-align: center;
+}
+
+.message {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  color: #222;
+}
+
+.message.error {
+  color: #d93025;
+}
+
+.message.info {
+  color: #006621;
+}
+
+form {
+  margin: 0;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline-offset: 2px;
+  outline-color: #00c71f;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+  border-color: #00c71f;
+  outline-color: #00c71f;
+}
+
+button {
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #00c71f;
+  color: white;
+  font-weight: 900;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 50px;
+  padding: 0.5rem 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+}
+
+button:hover:enabled {
+  background-color: #009914;
+}
+
+button:disabled {
+  background-color: #a5d6a7;
+  cursor: not-allowed;
+}
+
+.resend-container {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 480px) {
+  .container-2fa {
+    width: 90vw;
+    padding: 1.5rem 1.8rem;
+  }
+
+  .header-text .zona {
+    font-size: 3rem;
+  }
+
+  .header-text .mcviana {
+    font-size: 3.5rem;
+  }
+
+  .header-text .portal {
+    font-size: 1.4rem;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.15); /* muy transparente */
+  color: rgba(255, 255, 255, 0.3); /* texto muy tenue */
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.3rem 1rem;
+  user-select: none;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  z-index: 10000;
+  font-family: Arial, sans-serif;
+}
+
+.footer svg {
+  width: 12px;
+  height: 12px;
+  fill: rgba(255, 255, 255, 0.3);
+  vertical-align: middle;
+}
+
+.footer a {
+  color: rgba(144, 238, 144, 0.3); /* verde claro muy tenue */
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: rgba(144, 238, 144, 1); /* verde claro visible al hover */
+  text-decoration: underline;
+}

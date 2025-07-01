@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Nube mejorada -->
+  <path d="M45 38H23
+       c-5.523 0-10-4.477-10-10 0-5.114 3.838-9.32 8.828-9.914A8.002 8.002 0 0 1 31.5 12
+       c4.418 0 8 3.582 8 8 0 .274-.013.545-.038.814A7.998 7.998 0 0 1 53 28
+       c0 5.523-4.477 10-10 10z" fill="#8FD8D2" stroke="#216E6D" stroke-width="4" stroke-linejoin="round"></path>
+
+  <!-- Barra diagonal "off" -->
+  <line x1="14" y1="50" x2="50" y2="14" stroke="#216E6D" stroke-width="6" stroke-linecap="round"></line>
+</svg>

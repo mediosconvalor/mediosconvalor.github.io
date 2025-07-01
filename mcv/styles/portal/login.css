@@ -1,0 +1,277 @@
+/* Reset y base */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: url('https://raw.githubusercontent.com/mediosconvalor/mcv/refs/heads/main/img/background/truck_login.png') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  color: white;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  z-index: 1;
+  padding: 2rem 3rem;
+  overflow: visible;
+}
+
+.header-text {
+  font-weight: bold;
+  user-select: none;
+  text-align: left;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.header-text .zona {
+  font-size: 4rem;
+  line-height: 1;
+  margin: 0;
+}
+
+.header-text .mcviana {
+  font-size: 5rem;
+  color: #00c71f;
+  margin: 0;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.header-text .portal {
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  margin-top: 0.3rem;
+  font-weight: 600;
+}
+
+/* Contenedor formulario y botón google */
+.login-wrapper-container {
+  position: absolute;
+  bottom: 120px;
+  right: 40px;
+  width: 320px;
+  max-width: 90vw;
+  background: rgba(255 255 255 / 0.9);
+  border-radius: 40px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.3);
+  padding: 1rem 1.5rem;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  max-height: none;
+  box-sizing: border-box;
+}
+
+/* Botón Google justo arriba del formulario */
+.google-btn {
+  background: white;
+  color: #444;
+  border: 1px solid #ccc;
+  padding: 10px 24px;
+  border-radius: 5px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto 0 auto;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+.google-btn:hover,
+.google-btn:focus {
+  background: #f1f1f1;
+  outline: none;
+}
+
+.login-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: black;
+  font-weight: 700;
+}
+
+.login-wrapper label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.login-wrapper label input {
+  border: none;
+  border-radius: 20px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: black;
+  background-color: #fffdd0;
+  outline-offset: 2px;
+  flex-grow: 1;
+  min-width: 140px;
+  max-width: 240px;
+  width: 100%;
+  user-select: text;
+}
+
+.login-wrapper label input::placeholder {
+  color: #999;
+}
+
+.login-wrapper label input:focus {
+  outline: 2px solid #00c71f;
+}
+
+.login-wrapper button {
+  cursor: pointer;
+  border: none;
+  background-color: #00c71f;
+  color: white;
+  font-weight: 900;
+  font-size: 1.1rem;
+  padding: 0.45rem 1.8rem;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  margin-top: 0.4rem;
+}
+
+.login-wrapper button:hover {
+  background-color: #00a315;
+}
+
+.forgot-password {
+  color: #00c71f;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  cursor: pointer;
+  user-select: none;
+  margin-top: 0.6rem;
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.forgot-password:hover {
+  color: #00a315;
+}
+
+.error-msg {
+  position: static;
+  color: #ff4d4d;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.3rem 0.8rem;
+  border-radius: 10px;
+  user-select: none;
+  max-width: 100%;
+  margin-top: 0.8rem;
+}
+
+/* Media Query para móvil */
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    height: 100vh;
+  }
+
+  .header-text {
+    text-align: left;
+    margin-bottom: 2rem;
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .login-wrapper-container {
+    position: static;
+    width: 90vw;
+    max-width: 400px;
+    background: rgba(255 255 255 / 0.9);
+    border-radius: 40px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.3);
+    padding: 1rem 1.5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    max-height: none;
+  }
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 0.3rem 1rem;
+  user-select: none;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  z-index: 10000;
+  font-family: Arial, sans-serif;
+}
+
+.footer svg {
+  width: 12px;
+  height: 12px;
+  fill: rgba(255, 255, 255, 0.3);
+  vertical-align: middle;
+}
+
+.footer a {
+  color: rgba(144, 238, 144, 0.3);
+  text-decoration: none;
+  font-weight: 700;
+  margin-left: 0.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover,
+.footer a:focus {
+  color: rgba(144, 238, 144, 1);
+  text-decoration: underline;
+}
+
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    height: 100%;
+    overflow-y: hidden;
+  }
+  body {
+    position: fixed;
+    width: 100vw;
+    overflow-y: auto;
+  }
+}

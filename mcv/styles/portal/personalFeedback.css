@@ -1,0 +1,55 @@
+.my-feedback-wrapper {
+  padding: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.feedback-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.feedback-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 0.3rem;
+}
+
+.feedback-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feedback-list li {
+  margin-bottom: 1rem;
+  padding: 0.8rem;
+  background: #f9f9f9;
+  border-left: 4px solid var(--green, #0a0);
+  border-radius: 8px;
+}
+
+.feedback-list li small {
+  display: block;
+  color: #777;
+  margin-top: 0.4rem;
+}
+
+.empty-msg {
+  color: #888;
+  font-style: italic;
+}
+
+/* Grid responsive para 2 columnas en desktop, 1 en móvil */
+@media (min-width: 768px) {
+  .my-feedback-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

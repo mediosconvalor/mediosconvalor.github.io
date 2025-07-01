@@ -1,0 +1,51 @@
+/* loader.css */
+
+/* Loader full-screen */
+#page-loader {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: #f5f5f5;               /* mismo fondo que tu web */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Logo MCV dentro del loader */
+.loader-logo {
+  width: 120px;                      /* ajústalo según tu logo */
+  margin-bottom: 1rem;
+  animation: fadeIn 0.6s ease-in-out;
+}
+
+/* Spinner circular */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ddd;
+  border-top: 4px solid #333;        /* color de texto principal de MCV */
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animaciones */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Ocultar contenido y preparar fade-out del loader */
+.hidden {
+  display: none;
+}
+
+#page-loader.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}

@@ -1,0 +1,19 @@
+    .center-form-wrapper {
+        min-height: calc(100vh - 130px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.2rem 0 1.6rem 0;
+    }
+    .profile-portal-card textarea.form-control {
+        min-height: 170px;
+        font-size: 1.07rem;
+        line-height: 1.5;
+        padding: 1.1rem 1rem;
+    }
+    @media (max-width:600px) {
+        .center-form-wrapper {
+            min-height: 0;
+            padding: 0.5rem 0 1.5rem 0;
+        }
+    }

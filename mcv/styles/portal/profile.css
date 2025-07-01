@@ -1,0 +1,169 @@
+/* ======= Perfil MCV - Solo lo exclusivo ======= */
+
+/* Card central para perfil */
+.profile-portal-card {
+  max-width: 470px;
+  margin: 3.5rem auto 2.5rem auto;
+  background: var(--white);
+  border-radius: 2rem;
+  box-shadow: 0 4px 16px #1112;
+  padding: 2.2rem 2rem 2rem 2rem;
+  text-align: center;
+  position: relative;
+}
+
+/* Título del perfil */
+.profile-title {
+  font-size: 2.1rem;
+  color: var(--green);
+  margin-bottom: 1.2rem;
+  font-family: var(--font-heading);
+}
+
+/* Avatar circular grande */
+.profile-avatar-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.avatar-img {
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--green);
+  background: #f2f2f2;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 2px 8px #0001;
+  transition: border-color .2s;
+}
+
+/* Formulario de subida */
+.profile-upload-form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+}
+
+.custom-file-input {
+  display: none;
+}
+.custom-file-label {
+  background: var(--light-bg);
+  border: 2px solid var(--green);
+  color: #363b47;
+  padding: 8px 1.1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background .15s, color .15s;
+  user-select: none;
+  outline: none;
+}
+.custom-file-label:hover, .custom-file-label:focus {
+  background: var(--green);
+  color: var(--white);
+}
+
+.btn {
+  padding: 8px 2rem;
+  background: var(--green);
+  color: var(--white);
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background .18s, color .18s;
+}
+.btn-primary:hover, .btn:focus {
+  background: #28b90f;
+  color: #fff;
+}
+.btn-secondary {
+  background: var(--white);
+  color: var(--green);
+  border: 2px solid var(--green);
+  border-radius: 1.2rem;
+  padding: 0.45rem 1.1rem;
+  margin-top: 1.3rem;
+  margin-bottom: 0.2rem;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  transition: background .15s, color .15s;
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background: var(--green);
+  color: var(--white);
+}
+
+/* Info del perfil */
+.profile-info {
+  text-align: left;
+  margin-top: 1.7rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.07rem;
+  line-height: 1.55;
+}
+.profile-info h2 {
+  font-size: 1.09rem;
+  color: #222;
+  font-family: var(--font-heading);
+  margin-top: 1.6rem;
+  margin-bottom: 0.5rem;
+}
+.profile-info p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #222;
+}
+.profile-empty {
+  color: #b93030;
+  margin: 1.7rem 0;
+  font-weight: bold;
+  text-align: center;
+}
+
+.alert {
+  border-radius: 1.2rem;
+  padding: 13px 18px;
+  margin-bottom: 18px;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+.alert-success {
+  background: #e6fae6;
+  color: #1a612a;
+  border: 1.5px solid #a6dfae;
+}
+.alert-danger {
+  background: #ffe6e6;
+  color: #951616;
+  border: 1.5px solid #e9b1b1;
+}
+
+/* Responsive */
+@media (max-width: 599px) {
+  .profile-portal-card {
+    padding: 1.1rem 0.4rem 1rem 0.4rem;
+  }
+  .profile-title {
+    font-size: 1.35rem;
+  }
+  .avatar-img {
+    width: 84px;
+    height: 84px;
+  }
+  .btn, .btn-secondary {
+    padding: 8px 1.1rem;
+    font-size: 0.99rem;
+  }
+  .profile-info { font-size: 0.97rem; }
+}

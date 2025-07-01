@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+
+/* Modal de inicio */
+#modal-inicio {
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#modal-inicio .modal-contenido {
+  background: #2b2f3d;
+  color: #f2f2f2;
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+#modal-inicio h2 {
+  color: #26d954;
+  margin-bottom: 1em;
+}
+
+#modal-inicio input,
+#modal-inicio select {
+  width: 100%;
+  padding: 0.75em;
+  margin: 0.5em 0 1em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  background: #1f2231;
+  color: #f2f2f2;
+}
+
+#modal-inicio button {
+  display: block;
+  width: 100%;
+  margin: 0.5em 0;
+  background: #26d954;
+  color: #1a1e2c;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7em;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+#modal-inicio button:hover {
+  background: #1ec946;
+}
+
+/* Cuerpo */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f2f2f2;
+  color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: #161923;
+  border-bottom: 4px solid #26d954;
+  text-align: center;
+  padding: 2em 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+header h1 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+form {
+  background: #2b2f3d;
+  padding: 2em;
+  max-width: 800px;
+  margin: 3em auto;
+  border-radius: 1em;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+fieldset:first-of-type {
+  display: block;
+}
+
+legend {
+  font-weight: 700;
+  margin-bottom: 1em;
+  color: #26d954;
+  font-size: 1.4em;
+}
+
+label {
+  display: block;
+  margin-bottom: 1.2em;
+  color: #ddd;
+  font-weight: 500;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.75em;
+  margin-top: 0.3em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-family: inherit;
+  background: #1f2231;
+  color: #f2f2f2;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #26d954;
+}
+
+.nav-buttons,
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5em;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: #26d954;
+  color: #1a1e2c;
+  border: none;
+  padding: 0.75em 1.6em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1em;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #1ec946;
+}
+
+footer {
+  background: #161923;
+  color: #ccc;
+  text-align: center;
+  padding: 2.5em 1em;
+  font-size: 1em;
+  margin-top: 4em;
+  border-top: 4px solid #26d954;
+  box-sizing: border-box;
+}
+
+footer p {
+  margin: 0.6em 0;
+}
+
+footer a {
+  color: #26d954;
+  text-decoration: none;
+  margin: 0 0.7em;
+  font-weight: 500;
+  font-size: 0.95em;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a.no-link {
+  color: inherit;         /* mismo color que el texto del <p> */
+  text-decoration: none;  /* quita el subrayado */
+  cursor: pointer;        /* cursor de enlace */
+}
+
+footer a.no-link:hover {
+  text-decoration: none;  /* que no aparezca nada extra al pasar el ratón */
+}
+
+#mensaje {
+  margin-top: 1em;
+  font-size: 0.95em;
+  color: #26d954;
+}
+
+#razon-social-label {
+  font-weight: bold;
+  color: #26d954;
+}
+
+#borrar-borrador {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.75em 1.4em;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  z-index: 1001;
+  display: none; /* por defecto oculto, lo activa el JS */
+}
+
+#borrar-borrador:hover {
+  background: #e04343;
+}
+
+#exportar-json {
+  display: none;
+}
+
+/* WhatsApp floating icon */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-image: url('https://www.webered.com/datos/uploads/mod_publicacion/24194/whatsapp-flag-icons-95406-5b7c220dd45ab_thumbnail.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  text-decoration: none;
+}
+
+
+.floating-whatsapp:hover {
+  background: #1ebc57;
+}
+
+/* Modal de éxito */
+#modal-exito {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  display: none;
+}
+
+#modal-exito .modal-imagen {
+  max-width: 150px;
+  margin: 0 auto 1em;
+  display: block;
+}
+
+#modal-exito .contenido {
+  background: #2b2f3d;
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  color: #f2f2f2;
+}
+
+#modal-exito h2 {
+  color: #26d954;
+  margin-bottom: 1em;
+}
+
+#modal-exito ul {
+  text-align: left;
+  margin-top: 1em;
+  line-height: 1.6;
+  padding-left: 1em;
+}
+
+#modal-exito button {
+  margin-top: 2em;
+  background: #26d954;
+  border: none;
+  color: #1a1e2c;
+  padding: 0.75em 2em;
+  font-weight: 600;
+  border-radius: 6px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+#modal-exito button:hover {
+  background: #1ec946;
+}
+
+/* Modal de error */
+#modal-error {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999 !important;
+}
+
+#modal-error .contenido {
+  background: #2b2f3d;
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  color: #f2f2f2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+#modal-error h3 {
+  color: #ef4444;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+#modal-error p {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+}
+
+#modal-error button {
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  background: #ef4444;
+  color: #fff;
+}
+
+#modal-error button:hover {
+  background: #dc2626;
+}
+
+
+/* Modal de confirmación */
+#modal-confirmar {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+#modal-confirmar .contenido {
+  background: #2b2f3d;
+  padding: 2em;
+  border-radius: 1em;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  color: #f2f2f2;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+#modal-confirmar h3 {
+  color: #facc15;
+  font-size: 1.4em;
+  margin-bottom: 0.5em;
+}
+
+#modal-confirmar p {
+  margin-bottom: 1.5em;
+  font-size: 1em;
+}
+
+#modal-confirmar .acciones {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+}
+
+#modal-confirmar button {
+  padding: 0.7em 1.5em;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#btn-confirmar-si {
+  background: #26d954;
+  color: #1a1e2c;
+}
+
+#btn-confirmar-si:hover {
+  background: #1ec946;
+}
+
+#btn-confirmar-no {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+#btn-confirmar-no:hover {
+  background: #d1d5db;
+}
+.modal-imagen {
+  max-width: 180px;
+  max-height: 180px;
+  margin: 0 auto 1em;
+  display: block;
+  border-radius: 0.5em;
+  object-fit: contain;
+}
+
+/* Éstilo de tipo de persona */
+#modal-inicio .toggle-btn {
+  background: #222;
+  color: #ccc;
+  border: 2px solid #26d954;
+}
+
+#modal-inicio .toggle-btn:hover {
+  background: #26d954;
+  color: #000;
+}
+
+#modal-inicio .toggle-btn.active {
+  background: #26d954;
+  color: #000;
+}
+
+#modal-inicio .toggle-btn.active:hover {
+  background: #26d954;
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.3em;
+  }
+}

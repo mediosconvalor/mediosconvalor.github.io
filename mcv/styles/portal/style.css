@@ -1,0 +1,632 @@
+:root {
+  /* Colores */
+  --green:        #39FF14;
+  --white:        #fff;
+  --dark:         rgba(0,0,0,0.6);
+  --light-bg:     rgba(255,255,255,0.9);
+
+  /* Tipografías */
+  --font-body:    'Muller Narrow', sans-serif;
+  --font-heading: 'Neo Sans Pro', sans-serif;
+}
+
+/* ===== Tipografías ===== */
+body, p, a, li {
+  font-family: var(--font-body);
+}
+h1, h2, h3, .welcome__title {
+  font-family: var(--font-heading);
+}
+
+/* ===== Reset y configuración base ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  height: auto;
+  width: 100%;
+  margin: 0;
+  overflow-y: auto;
+  position: relative;
+}
+
+/* ===== Fondo por defecto ===== */
+body {
+  background-color: #e8ecec;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Capa semitransparente ===== */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--dark);
+  z-index: 1;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 45px;   /* ajusta a la altura de header.png */
+  background: url('https://raw.githubusercontent.com/mediosconvalor/mcv/refs/heads/main/img/header.png')
+              center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 10;
+}
+
+/* Botón hamburguesa */
+.hamburger {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url('https://mediosconvalor.github.io/mcv/img/icons/menu.svg')
+              center/contain no-repeat;
+  border: none;
+  cursor: pointer;
+  z-index: 11;
+}
+/* Oculta la hamburguesa cuando el sidebar está abierto */
+body.sidebar-open .hamburger {
+  display: none;
+}
+
+/* Logo dentro del header (si lo incluyes) */
+.site-header .brand {
+  height: 2rem;
+  width: auto;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: absolute;
+  top: 0; bottom: 0; left: -260px;
+  width: 260px;
+  background: var(--light-bg);
+  backdrop-filter: blur(8px);
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 2rem 1rem;
+  transition: left .3s ease;
+  z-index: 1001;
+}
+.sidebar.open {
+  left: 0;
+}
+
+/* Logo dentro del sidebar */
+.sidebar__brand {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.sidebar__brand img {
+  max-width: 80%;
+  height: auto;
+  display: inline-block;
+}
+
+/* Botón de cerrar */
+.sidebar__close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 1.5rem; height: 1.5rem;
+  background: url('https://mediosconvalor.github.io/mcv/img/icons/close.svg')
+              center/contain no-repeat;
+  border: none;
+  cursor: pointer;
+  z-index: 1002;
+}
+
+/* Lista del menú */
+.sidebar ul {
+  list-style: none;
+  margin-top: 4rem;
+}
+.sidebar li + li {
+  margin-top: 1.5rem;
+}
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* ===== Contenido de bienvenida ===== */
+.welcome {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--white);
+  z-index: 5;
+  padding: 1rem;
+}
+.welcome__logo {
+  width: 200px;
+  margin-bottom: 2rem;
+}
+.welcome__title {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  color: var(--green);
+  margin-bottom: 0.5rem;
+  line-height: 1.1;
+}
+.welcome__role {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* ===== Footer ===== */
+.footer {
+  position: relative;    /* lo sacamos de fixed */
+  margin-top: auto;      /* empuja el footer al fondo en layout flex */
+  background-color: var(--green);
+  color: #4A4A63;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.75rem 1rem;  /* espacio arriba y abajo */
+  box-shadow: 0 -1px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+/* Contenedor interno del footer */
+.footer__inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.footer a {
+  color: inherit;
+  text-decoration: none;
+  cursor: default;
+}
+.footer a:hover,
+.footer a:focus {
+  color: inherit;
+  text-decoration: none;
+  opacity: 1;
+}
+
+/* ===== Responsive (móvil) ===== */
+@media (max-width: 599px) {
+  /* permitir scroll vertical */
+  html, body {
+    height: auto;
+    overflow-y: auto;
+  }
+  /* separar welcome del footer para el grid */
+  .welcome {
+    position: relative !important;
+    inset: auto !important;
+    height: auto;
+    padding: 2rem 1rem 1rem;
+  }
+  /* apps-grid fluye en móvil */
+  .apps-grid {
+    position: relative;
+    bottom: auto;
+    transform: none;
+    display: grid;
+    grid-template-columns: repeat(2, 4rem);
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+    z-index: 5;
+    overflow-y: auto;
+  }
+  .app-btn {
+    width: 4rem;
+    height: 4rem;
+  }
+  .hidden {
+    display: none !important;
+  }
+}
+
+/* ===== Selector de apps (modal) ===== */
+.selector-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+.selector-modal.hidden {
+  display: none !important;
+}
+.selector-content {
+  background: #fff;
+  border-radius: 12px;
+  max-width: 360px;
+  width: 90%;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow-y: auto;
+  max-height: 80vh;
+}
+.selector-content h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: #333;
+  text-align: center;
+}
+.selector-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.selector-content ul li {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.selector-content ul li:hover {
+  background: #f5f5f5;
+}
+.selector-content button {
+  margin-top: 1rem;
+  display: block;
+  width: 100%;
+  padding: 0.6rem;
+  background: var(--green);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ===== Grid de apps general ===== */
+.apps-wrapper {
+  position: relative;
+}
+.apps-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  overflow-y: auto;
+  max-height: calc(100vh - 250px);
+}
+
+/* --- tablas --- */
+
+.table-responsive {
+  overflow-x: auto;
+  margin-top: 1.5rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  box-shadow: none;
+}
+
+.table thead th {
+  background-color: #00C13F;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  border: 1px solid #00C13F;
+}
+
+.table tbody td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  color: #333;
+}
+
+.table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.action-link {
+  color: #004080;
+  text-decoration: none;
+}
+.action-link:hover {
+  text-decoration: underline;
+}
+
+.qr-code {
+  width: 80px;
+  height: 80px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* ===== Contenedor y separación de página ===== */
+.table-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* ===== Título de sección ===== */
+.page-title {
+  margin-top: 2.5rem;
+  margin-bottom: 0rem;
+  font-size: 1.75rem;
+  padding: 1rem;
+}
+
+/* ===== Buscador y botón ===== */
+.page-actions {
+  display: block;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
+.page-actions a.btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+}
+
+.search-input {
+  background-color: #f0f0f0;
+  border: 2px solid var(--green);
+  border-radius: 999px;
+  height: 2.25rem;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  flex: none;
+  width: 100%;
+  max-width: 600px;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+/* ===== Bordes redondeados de tabla ===== */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead th {
+  border-radius: 8px 8px 0 0;
+}
+
+.table tbody tr:last-child td {
+  border-radius: 0 0 8px 8px;
+}
+
+/* select */
+/* ===== Select “Mostrar” con bordes circulares ===== */
+.per-page select,
+#perPage {
+  border: 2px solid var(--green);
+  border-radius: 999px;      /* bordes completamente redondeados */
+  background-color: #f0f0f0; /* mismo gris claro del buscador */
+  padding: 0.25rem 1.25rem;   /* espacio interior */
+  font-size: 0.95rem;
+  outline: none;
+  appearance: none;          /* quita flecha nativa en algunos navegadores */
+  background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5"><path fill="%23000" d="M0,0l5,5l5,-5z"/></svg>');
+  background-repeat: no-repeat;
+  background-position: calc(100% - 0.75rem) center;
+  background-size: 10px 5px;
+  cursor: pointer;
+}
+
+/* Ajuste para mantener el ancho acorde al contenido */
+.per-page {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Sidebar en flex-columna */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Para que tome toda la altura */
+}
+
+/* El UL ocupa todo el espacio disponible */
+.sidebar ul {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+/* El logout-item se empuja al final */
+.sidebar ul li.logout-item {
+  margin-top: auto;
+}
+
+/* Dale un poco de espacio arriba */
+.sidebar ul li.logout-item a {
+  padding-top: 1rem;
+  color: #e63946;
+  font-weight: 600;
+}
+.sidebar ul li.logout-item a:hover {
+  color: #d62828;      /* un tono más oscuro al pasar el ratón */
+}
+/* ===== Campos al 100% de la columna ===== */
+.form-control {
+  width: 100%;
+  max-width: none;
+}
+
+/* ===== Ajustar el contenedor del formulario ===== */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;      /* una sola columna */
+  grid-gap: 1.5rem;
+  max-width: calc(100% - 4rem);    /* deja 2rem de margen a cada lado */
+  margin: 2rem auto;               /* centra horizontalmente */
+}
+
+/* ===== Campos estilo “píldora” ===== */
+.form-control {
+  background-color: #f0f0f0;
+  border: 2px solid var(--green);
+  border-radius: 999px;
+  height: 2.25rem;
+  padding: 0 1rem;
+  font-size: 0.95rem;
+  outline: none;
+  appearance: none;
+}
+
+/* Flecha custom para selects dentro de .form-control */
+form select.form-control {
+  background-image: url('data:image/svg+xml;charset=US-ASCII,\
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="5">\
+<path fill="%23000" d="M0,0l5,5l5,-5z"/>\
+</svg>');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 10px 5px;
+  cursor: pointer;
+}
+
+/* ===== Checkbox “Activo” centrado y estilo píldora ===== */
+.form-check {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1rem;
+  margin: 1rem 0;
+}
+
+.form-check label {
+  background-color: #f0f0f0;
+  border: 2px solid var(--green);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.form-check input[type="checkbox"] {
+  margin-right: 0.5rem;
+  width: auto;
+  height: auto;
+}
+
+/* ===== Botón “Crear usuario” centrado y estilo píldora ===== */
+.form-grid .full-width {
+  text-align: center;
+}
+
+.form-grid .full-width .btn-primary {
+  display: inline-block;          /* respeta width auto */
+  margin: 0 auto;                 /* centro absoluto */
+  background-color: var(--green) !important;
+  color: #fff !important;
+  border: 2px solid var(--green) !important;
+  border-radius: 999px !important;
+  padding: 0.5rem 1.5rem !important;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form-grid .full-width .btn-primary:hover {
+  opacity: 0.9;
+}
+/* ===== Botón secundario ===== */
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--green);
+  border: 2px solid var(--green);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+/* ===== Espacio extra antes del footer en móvil ===== */
+@media (max-width: 768px) {
+  main.container {
+    padding-bottom: 4rem;
+  }
+}
+
+/* === Mejora el scroll en móvil === */
+.table-responsive {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* === Forzar quiebre de palabras largas === */
+.table tbody td {
+  /* para nombres de archivo larguísimos */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Botón base */
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  border-radius: 999px;
+  font-weight: 500;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+/* Botón rojo para acciones destructivas */
+.btn-danger {
+  background-color: #e63946;
+  color: #fff;
+  border: 2px solid #e63946;
+}
+
+.btn-danger:hover,
+.btn-danger:focus {
+  background-color: #d62828;
+  color: #fff;
+}
+
+.custom-button {
+  display: inline-block;
+  padding: 10px 18px;
+  background-color: #0078d4;
+  color: white;
+  border-radius: 6px;
+  text-align: center;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+}
+
+.custom-button:hover {
+  background-color: #005a9e;
+}
