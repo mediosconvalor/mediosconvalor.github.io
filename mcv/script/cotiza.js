@@ -223,7 +223,7 @@ function mostrarPopup(ok) {
 }
 
 // Base de URL para imágenes
-const BASE_IMG_URL = 'https://raw.githubusercontent.com/mediosconvalor/mcv/refs/heads/main/img/contenedores';
+const BASE_IMG_URL = 'https://mediosconvalor.github.io/mcv/img/contenedores';
 
 const contenedoresPorSucursal = {
     aguascalientes: {
