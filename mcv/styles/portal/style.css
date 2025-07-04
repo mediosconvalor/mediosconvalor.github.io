@@ -53,7 +53,7 @@ body {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 45px;   /* ajusta a la altura de header.png */
-  background: url('https://raw.githubusercontent.com/mediosconvalor/mcv/refs/heads/main/img/header.png')
+  background: url('https://mediosconvalor.github.io/mcv/img/header.png')
               center/cover no-repeat;
   display: flex;
   align-items: center;
