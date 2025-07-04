@@ -569,10 +569,15 @@ form select.form-control {
   color: var(--white);
 }
 
+main.container {
+  margin-top: 45px;
+}
+
 /* ===== Espacio extra antes del footer en móvil ===== */
 @media (max-width: 768px) {
   main.container {
     padding-bottom: 4rem;
+    margin-top: 45px;
   }
 }
 
