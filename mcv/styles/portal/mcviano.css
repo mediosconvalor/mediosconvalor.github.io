@@ -108,3 +108,10 @@
     .comment-form .btn-secondary {
       white-space: nowrap;
     }
+
+    .feed-post img {
+      max-height: 300px;
+      width: auto;
+      object-fit: cover;
+      border-radius: 8px;
+    }
