@@ -2,7 +2,7 @@ html, body {
   margin: 0; padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
-  background: url('https://raw.githubusercontent.com/mediosconvalor/mcv/refs/heads/main/img/background/truck_login.png') no-repeat center center fixed;
+  background: url('https://mediosconvalor.github.io/mcv/img/background/truck_login.png') no-repeat center center fixed;
   background-size: cover;
   color: white;
   display: flex;
