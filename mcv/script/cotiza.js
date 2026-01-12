@@ -1,4 +1,4 @@
-const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbxgE8DXFAJWNBF4-uFMte45j33DIiUk8FhFTx2TvksWbqJEc3m4Hp3-ojMuT2nTuKrg/exec';
+const URL_APPS_SCRIPT = 'https://script.google.com/macros/s/AKfycbxXGFR1jFX6Cw-exXyo-edqGshnRrSAy-wDGfuFo07fTb5CTurUWOMdI8ILcEqUv3SM/exec';
 
 const branchInfo = {
   queretaro: { city: 'Querétaro, México', phone: '524424710760' },
