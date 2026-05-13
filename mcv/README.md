@@ -122,8 +122,8 @@ La tipografía forma parte del estilo visual de la marca y debe respetarse para 
 
 ### Tipografías autorizadas
 
-- **Primaria:** Neo Sans Pro
-- **Secundaria:** Muller
+- **Primaria:** <a href="https://mediosconvalor.github.io/mcv/assets/fonts/NeoSansPro-Bold.ttf">Neo Sans Pro
+- **Secundaria:** <a href="https://mediosconvalor.github.io/mcv/assets/fonts/Muller-Black.otf">Muller</a>
 
 ---
 
