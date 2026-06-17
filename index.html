@@ -749,9 +749,47 @@ inline-block; margin-left: 5px; margin-bottom: -5px; }
 .bio-buttons a:hover {
   background-color: hsl(106, 80%, 42%);
 }
-</style></head>
+
+html,
+body {
+  min-height: 100%;
+}
+
+#page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#page > [data-elementor-type="header"],
+#page > [data-elementor-type="footer"] {
+  flex: 0 0 auto;
+}
+
+#page > .site-content,
+#page > .bio-link {
+  flex: 1 0 auto;
+}
+
+#page > [data-elementor-type="footer"] {
+  margin-top: auto;
+}
+</style><link rel="stylesheet" href="mcv/styles/mcv-loader.css"></head>
 
 <body data-rsssl="1" itemtype="https://schema.org/WebPage" itemscope="itemscope" class="error404 wp-custom-logo wp-theme-astra ast-desktop ast-separate-container ast-two-container ast-no-sidebar astra-4.7.0 ast-inherit-site-logo-transparent ast-hfb-header elementor-default elementor-kit-1131 e--ua-firefox" style="" data-elementor-device-mode="desktop">
+
+<div class="mcv-page-loader" data-mcv-loader aria-live="polite" aria-label="Cargando">
+  <div class="mcv-loader-card">
+    <div class="mcv-loader-truck" aria-hidden="true">
+      <img src="mcv/assets/svg/mcv_truck_idle.svg" alt="">
+      <span class="mcv-loader-wheel front"></span>
+      <span class="mcv-loader-wheel rear"></span>
+      <span class="mcv-loader-wheel rear-secondary"></span>
+    </div>
+    <div class="mcv-loader-road"></div>
+    <span class="mcv-loader-text">Cargando</span>
+  </div>
+</div>
 
 <a class="skip-link screen-reader-text" href="#content" role="link" title="Ir al contenido">
 		Ir al contenido</a>
@@ -884,7 +922,7 @@ inline-block; margin-left: 5px; margin-bottom: -5px; }
 			<div class="bio-link">
     <h2>Eduardo Vázquez</h2>
   <div class="bio-buttons">
-    <a href="https://evazquez.me/" target="_blank">🌐 Mi sitio</a>
+    <a href="https://equis01.github.io/" target="_blank">🌐 Mi sitio</a>
     <a href="https://wa.me/524461385019" target="_blank">📱 WhatsApp</a>
     <a href="mailto:sistemas@mediosconvalor.com">✉️ Correo</a>
   </div>
@@ -1059,4 +1097,4 @@ var Sky_AddonsFrontendConfig = {"ajaxurl":"https:\/\/mediosconvalor.com\/wp-admi
 
 <script type="text/javascript" id="" charset="">window.addEventListener("click",function(a){a.target.closest('[href*\x3d"tel:+524496888945"]')&&(console.log("call has been clicked"),dataLayer.push({event:"llamada"}))});</script>
 
-<iframe height="0" width="0" style="display: none; visibility: hidden;"></iframe><script type="text/javascript" id="" charset="">window.addEventListener("click",function(a){a.target.closest('[href*\x3d"tel:+528113395722"]')&&(console.log("call has been clicked"),dataLayer.push({event:"llamada"}))});</script></body></html>
+<iframe height="0" width="0" style="display: none; visibility: hidden;"></iframe><script type="text/javascript" id="" charset="">window.addEventListener("click",function(a){a.target.closest('[href*\x3d"tel:+528113395722"]')&&(console.log("call has been clicked"),dataLayer.push({event:"llamada"}))});</script><script src="mcv/script/mcv-loader.js"></script></body></html>

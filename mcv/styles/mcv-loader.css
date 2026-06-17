@@ -1,0 +1,180 @@
+.mcv-page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.42);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.35s ease, visibility 0.35s ease;
+}
+
+body.mcv-loader-ready .mcv-page-loader {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mcv-loader-card {
+  width: min(520px, calc(100vw - 44px));
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.mcv-loader-truck {
+  position: relative;
+  width: min(460px, 84vw);
+  aspect-ratio: 680 / 200;
+  animation: mcvTruckIdle 0.9s ease-in-out infinite;
+}
+
+.mcv-loader-truck img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.mcv-loader-wheel {
+  position: absolute;
+  top: 79%;
+  width: 6.48%;
+  aspect-ratio: 1;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, #FFFFFF 0 18%, #535B6F 19% 40%, #535B6F 41% 63%, #535B6F 64% 100%);
+  box-shadow:
+    inset 0 0 0 2px #535B6F,
+    inset 0 0 0 6px rgba(255, 255, 255, 0.08),
+    0 2px 3px rgba(0, 0, 0, 0.22);
+  transform: translate(-50%, -50%);
+}
+
+.mcv-loader-wheel::before,
+.mcv-loader-wheel::after {
+  content: "";
+  position: absolute;
+  inset: 19%;
+  border-radius: 999px;
+}
+
+.mcv-loader-wheel::before {
+  background:
+    radial-gradient(circle, transparent 0 22%, #FFFFFF 23% 30%, transparent 31%),
+    conic-gradient(
+      from 8deg,
+      transparent 0 22deg,
+      #FFFFFF 22deg 34deg,
+      transparent 34deg 67deg,
+      #FFFFFF 67deg 79deg,
+      transparent 79deg 112deg,
+      #FFFFFF 112deg 124deg,
+      transparent 124deg 157deg,
+      #FFFFFF 157deg 169deg,
+      transparent 169deg 202deg,
+      #FFFFFF 202deg 214deg,
+      transparent 214deg 247deg,
+      #FFFFFF 247deg 259deg,
+      transparent 259deg 292deg,
+      #FFFFFF 292deg 304deg,
+      transparent 304deg 337deg,
+      #FFFFFF 337deg 349deg,
+      transparent 349deg 360deg
+    );
+  animation: mcvWheelSpin 0.42s linear infinite;
+}
+
+.mcv-loader-wheel::after {
+  inset: 38%;
+  background: #FFFFFF;
+  box-shadow:
+    0 -9px 0 -4px #009EFF,
+    7px -6px 0 -4px #009EFF,
+    9px 0 0 -4px #009EFF,
+    7px 6px 0 -4px #009EFF,
+    0 9px 0 -4px #009EFF,
+    -7px 6px 0 -4px #009EFF,
+    -9px 0 0 -4px #009EFF,
+    -7px -6px 0 -4px #009EFF;
+}
+
+.mcv-loader-wheel.front {
+  left: 17.35%;
+}
+
+.mcv-loader-wheel.rear {
+  left: 58.1%;
+}
+
+.mcv-loader-wheel.rear-secondary {
+  left: 63.25%;
+  width: 5.88%;
+}
+
+.mcv-loader-road {
+  position: relative;
+  width: min(380px, 76vw);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(83, 91, 111, 0.16);
+}
+
+.mcv-loader-road::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    90deg,
+    #00DD2A 0 26px,
+    transparent 26px 50px
+  );
+  animation: mcvRoadMove 0.7s linear infinite;
+}
+
+.mcv-loader-text {
+  color: #535B6F;
+  font-family: "Montserrat", "Segoe UI", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+@keyframes mcvTruckIdle {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes mcvWheelSpin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes mcvRoadMove {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-52px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mcv-loader-truck,
+  .mcv-loader-wheel::before,
+  .mcv-loader-road::before {
+    animation: none;
+  }
+}
