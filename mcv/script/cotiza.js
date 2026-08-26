@@ -20,7 +20,7 @@ const contenedoresPorSucursal = {
   },
   monterrey: {
     "1.1m³": { medidas:"134.4×107.4×137 cm", carga:"Carga Manual", material:"Plástico", imagen:`https://mediosconvalor.github.io/mcv/img/contenedores/Mty/1_1.jpg`, bolsas:"6–8 bolsas",  minimoVisitas:2 },
-    "1.5m³": { medidas:"140×110×140 cm",     carga:"Carga Manual", material:"Acero",    imagen:`https://mediosconvalor.github.io/mcv/img/contenedores/Mty/1_5.jpg`, bolsas:"8–10 bolsas",  minimoVisitas:2 },
+    "1.5m³": { medidas:"185x104x80 cm",     carga:"Carga Manual", material:"Acero",    imagen:`https://mediosconvalor.github.io/mcv/img/contenedores/Mty/1_5.jpg`, bolsas:"8–10 bolsas",  minimoVisitas:2 },
     "3m³":   { medidas:"185×120×125 cm",     carga:"Carga Manual", material:"Acero",    imagen:`https://mediosconvalor.github.io/mcv/img/contenedores/Mty/3.jpg`,   bolsas:"16–18 bolsas", minimoVisitas:2 },
     "6m³":   { medidas:"190×200×150 cm",     carga:"Carga Manual", material:"Metal",    imagen:`https://mediosconvalor.github.io/mcv/img/contenedores/Mty/6.jpg`,   bolsas:"32–36 bolsas", minimoVisitas:2 }
   }
